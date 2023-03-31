@@ -1,0 +1,23 @@
+.add-todo-btn-container {
+    display: flex;
+    justify-content: center;
+    bottom: -35px;
+    position: relative;
+  }
+  .add-todo-button {
+    background-color: rgb(52, 221, 156);
+    opacity: 0.9;
+    font-size: 38px;
+    color: rgba(0, 0, 0, 0.426);
+    text-align: center;
+    border: 1px ;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+  }
+  .input-size{
+    width: 238px;
+    height: 26px;
+    margin-top: 8px;
+  }

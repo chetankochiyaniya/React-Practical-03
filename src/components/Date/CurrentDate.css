@@ -1,0 +1,27 @@
+.todo-date-container {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.68);
+    margin-bottom: 20px ;
+  }
+  .date-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .day {
+    padding: 0px 4px;
+    font-size: 38px;
+    font-weight: 500;
+  }
+  .month-year {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+  }
+  .weekday {
+    font-size: 12px;
+    font-weight: bold;
+  }

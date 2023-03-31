@@ -1,0 +1,52 @@
+/* css custom classes */
+.task-list-container{
+  height: 338px !important;
+  width: 250px !important;
+  overflow-y: auto;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0px;
+  opacity: 0.75;
+  font-size: 17px;
+}
+.task-msg {
+  max-width: 215px !important;
+  overflow-x: hidden;
+}
+
+/* css attribute selector */
+input[type="checkbox"] {
+  position: relative;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked {
+  border: none;
+  background-image: url('../../assets/checked-icon.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.task-msg.checked {
+  opacity: 0.5 !important;
+}
+
+
+/* css pseudo-element selector */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(195, 195, 195); 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f7f7f7; 
+}
