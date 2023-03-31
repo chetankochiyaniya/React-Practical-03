@@ -17,10 +17,13 @@ const Button = () => {
         setShowInput(!showInput);
     }
 
+    console.log("test")
     const handleKeyPress = (event) => {
-        console.log("enter handlekey funcation", event.key)
         if (event.key === 'Escape') {
             setShowInput(false);
+        }
+        if (event.key === 'Enter') {
+            
         }
     };
 
