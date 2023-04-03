@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import emptyListImg from '../../assets/empty-list.png'
 import './Task.css'
 
@@ -8,14 +8,6 @@ export default function Task() {
     const [inputValue, setInputValue] = useState('');
     const [list, setList] = useState(JSON.parse(localStorage.getItem('todo-list')));
     const [showMessage,setShowMessage] = useState({empty:false,exist:false})
-    
-    useEffect(() => {
-        window.addEventListener('keydown', handleKeyPress);
-
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress);
-        };
-    }, [inputValue, showInput]);
 
     const addTask = () => {
         setShowInput(!showInput);
@@ -98,6 +90,7 @@ export default function Task() {
                         placeholder='Press "Esc" to exit'
                         autoFocus
                         value={inputValue}
+                        onKeyDown={handleKeyPress}
                         onChange={(e) => setInputValue(e.target.value)}
                     />
                     {showMessage.empty && <div className="error-message">Error! Please enter a value.</div>}
