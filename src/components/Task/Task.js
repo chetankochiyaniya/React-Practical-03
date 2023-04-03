@@ -93,7 +93,7 @@ export default function Task() {
                         onKeyDown={handleKeyPress}
                         onChange={(e) => setInputValue(e.target.value)}
                     />
-                    {showMessage.empty && <div className="error-message">Error! Please enter a value.</div>}
+                    {showMessage.empty && <div className="error-message">Error! Please enter a Task.</div>}
                     {showMessage.exist && <div className="error-message">Error! This Task is already exist.</div>}
                     {showMessage.invalid && <div className="error-message">Error! invalid string </div>}
                 </div>
