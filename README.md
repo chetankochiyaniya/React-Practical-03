@@ -1,19 +1,22 @@
-# React-Practical-02 
-## To-do list application in React - part 1: UI and component structure 
+# React-Practical-03
+## To-do list application in React  - part 2: Functional specifications
 
 #
 
-### For Live demo (part 1: UI and component structure) : 
-https://react-practical-2-simform.netlify.app/
+### For Live demo : 
+https://react-practical-3-simform.netlify.app/
 
 ### OR
 
 #### (click this link to show output images) : 
-https://drive.google.com/drive/folders/1cWEZExbIeZx2xd7tU2jPsQMRqJt15UTK?usp=share_link
+https://drive.google.com/drive/folders/1XRsqYWaTJDxAM2rBYWe0ZokhgzEueWCV?usp=share_link
+
+
 #
 
 # Directory structure
-![Screenshot 2023-03-30 at 6 18 43 PM](https://user-images.githubusercontent.com/60025285/228840971-a469eaa2-bb90-4033-aea2-e3205bbe4342.png)
+
+![Screenshot 2023-04-03 at 5 50 06 PM](https://user-images.githubusercontent.com/60025285/229510956-e8904076-787d-4950-923f-2ac6cabb7ddb.png)
 
 
 #
@@ -46,16 +49,32 @@ Builds the app for production to the `build` folder.
 #
 
 ## output :
-<img src="https://github.com/chetankochiyaniya/React-Practical-02/blob/4b62c9e467b90753fd628c2e13b57842897403ed/outputs/lg-screen-home.png" alt="Practical Output Image" >
+<img src="https://github.com/chetankochiyaniya/React-Practical-03/blob/7baf194f4bb7b39d81c814a60a42bb56b96f7cd3/outputs/lg-screen-empty-list.png" alt="Practical Output Image" >
 
 #
 
-<img src="https://github.com/chetankochiyaniya/React-Practical-02/blob/4b62c9e467b90753fd628c2e13b57842897403ed/outputs/cheked-checkbox.png" alt="Practical Output Image" >
+<img src="https://github.com/chetankochiyaniya/React-Practical-03/blob/7baf194f4bb7b39d81c814a60a42bb56b96f7cd3/outputs/lg-screen-home.png" alt="Practical Output Image" >
 
 #
 
-<img src="https://github.com/chetankochiyaniya/React-Practical-02/blob/4b62c9e467b90753fd628c2e13b57842897403ed/outputs/input-box.png" alt="Practical Output Image" >
+<img src="https://github.com/chetankochiyaniya/React-Practical-03/blob/7baf194f4bb7b39d81c814a60a42bb56b96f7cd3/outputs/exist-task-error.png" alt="Practical Output Image" >
 
 #
 
-<img src="https://github.com/chetankochiyaniya/React-Practical-02/blob/4b62c9e467b90753fd628c2e13b57842897403ed/outputs/sm-screen-cheked.png" alt="Practical Output Image" width="350px" height="550px" />            <img src="https://github.com/chetankochiyaniya/React-Practical-02/blob/4b62c9e467b90753fd628c2e13b57842897403ed/outputs/sm-screen-input-box.png" width="350px" height="550px" alt="Practical Output Image"/>
+<img src="https://github.com/chetankochiyaniya/React-Practical-03/blob/7baf194f4bb7b39d81c814a60a42bb56b96f7cd3/outputs/validate-task.png" alt="Practical Output Image" >
+
+#
+
+<img src="https://github.com/chetankochiyaniya/React-Practical-03/blob/7baf194f4bb7b39d81c814a60a42bb56b96f7cd3/outputs/sm-screen-empty_list.png" alt="Practical Output Image" >
+
+#
+
+<img src="https://github.com/chetankochiyaniya/React-Practical-03/blob/7baf194f4bb7b39d81c814a60a42bb56b96f7cd3/outputs/sm-screen-home.png" alt="Practical Output Image" >
+
+#
+
+<img src="https://github.com/chetankochiyaniya/React-Practical-03/blob/7baf194f4bb7b39d81c814a60a42bb56b96f7cd3/outputs/duplicate-task-error.png" alt="Practical Output Image" >
+
+#
+
+
