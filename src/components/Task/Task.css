@@ -94,3 +94,8 @@ input[type="checkbox"]:checked {
   height: 26px;
   margin-top: 8px;
 }
+
+/* error-message*/
+.error-message{
+  color: red;
+}

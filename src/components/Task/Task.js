@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import emptyListImg from '../../assets/empty-list.png'
 import './Task.css'
 
@@ -7,39 +7,45 @@ export default function Task() {
     const [showInput, setShowInput] = useState(false);
     const [inputValue, setInputValue] = useState('');
     const [list, setList] = useState(JSON.parse(localStorage.getItem('todo-list')));
-
-    useEffect(() => {
-        window.addEventListener('keydown', handleKeyPress);
-
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress);
-        };
-    }, [inputValue, showInput]);
+    const [showMessage, setShowMessage] = useState({ empty: false, exist: false })
 
     const addTask = () => {
         setShowInput(!showInput);
     };
 
+    const handleErrorMessage = (obj) => {
+        setInputValue('')
+        setShowMessage(obj)
+        setTimeout(() => {
+            setShowMessage({ empty: false, exist: false })
+        }, 2000);
+    }
+
     const handleKeyPress = (event) => {
         if (event.key === 'Escape' && showInput === true) {
             setShowInput(false);
+            setShowMessage({ empty: false, exist: false })
+            setInputValue('')
         }
         if (event.key === 'Enter' && showInput === true) {
-            if (inputValue === '') {
-                alert('Please enter a value');
+            if (inputValue === '' || inputValue === null || inputValue === undefined || inputValue === ' ') {
+                handleErrorMessage({ empty: true, exist: false })
             } else {
-
                 if (localStorage.getItem("expiry-date") === null) {
                     localStorage.setItem("expiry-date", new Date().toLocaleDateString().toString())
                 }
                 const todoList = JSON.parse(localStorage.getItem('todo-list')) || [];
                 const duplicate = todoList.find((item) => item.text === inputValue);
                 if (duplicate) {
-                    alert('This task already exists');
+                    handleErrorMessage({ empty: false, exist: true })
+                }
+                else if (!(/[a-zA-Z]/.test(inputValue))) {
+                    handleErrorMessage({ empty: true, exist: false })
                 } else {
                     const newTodoList = [...todoList, { text: inputValue, checked: false }];
                     localStorage.setItem('todo-list', JSON.stringify(newTodoList));
                     setList([...todoList, { text: inputValue, checked: false }])
+                    setShowMessage({ empty: false, exist: false })
                     setInputValue('');
                 }
             }
@@ -84,8 +90,12 @@ export default function Task() {
                         placeholder='Press "Esc" to exit'
                         autoFocus
                         value={inputValue}
+                        onKeyDown={handleKeyPress}
                         onChange={(e) => setInputValue(e.target.value)}
                     />
+                    {showMessage.empty && <div className="error-message">Error! Please enter a value.</div>}
+                    {showMessage.exist && <div className="error-message">Error! This Task is already exist.</div>}
+                    {showMessage.invalid && <div className="error-message">Error! invalid string </div>}
                 </div>
             ) : (
                 <div className="add-todo-btn-container">
