@@ -7,29 +7,29 @@ export default function Task() {
     const [showInput, setShowInput] = useState(false);
     const [inputValue, setInputValue] = useState('');
     const [list, setList] = useState(JSON.parse(localStorage.getItem('todo-list')));
-    const [showMessage,setShowMessage] = useState({empty:false,exist:false})
+    const [showMessage, setShowMessage] = useState({ empty: false, exist: false })
 
     const addTask = () => {
         setShowInput(!showInput);
     };
 
-    const handleErrorMessage = (obj)=>{
+    const handleErrorMessage = (obj) => {
         setInputValue('')
         setShowMessage(obj)
         setTimeout(() => {
-            setShowMessage({empty:false,exist:false})
+            setShowMessage({ empty: false, exist: false })
         }, 2000);
     }
 
     const handleKeyPress = (event) => {
         if (event.key === 'Escape' && showInput === true) {
             setShowInput(false);
-            setShowMessage({empty:false,exist:false})
+            setShowMessage({ empty: false, exist: false })
             setInputValue('')
         }
         if (event.key === 'Enter' && showInput === true) {
-            if (inputValue === '' || inputValue=== null || inputValue === undefined || inputValue === ' ') {
-                handleErrorMessage({empty:true,exist:false})
+            if (inputValue === '' || inputValue === null || inputValue === undefined || inputValue === ' ') {
+                handleErrorMessage({ empty: true, exist: false })
             } else {
                 if (localStorage.getItem("expiry-date") === null) {
                     localStorage.setItem("expiry-date", new Date().toLocaleDateString().toString())
@@ -37,15 +37,15 @@ export default function Task() {
                 const todoList = JSON.parse(localStorage.getItem('todo-list')) || [];
                 const duplicate = todoList.find((item) => item.text === inputValue);
                 if (duplicate) {
-                    handleErrorMessage({empty:false,exist:true})
-                } 
-                else if(!(/[a-zA-Z]/.test(inputValue))){
-                    handleErrorMessage({empty:true,exist:false})
-                }else{
+                    handleErrorMessage({ empty: false, exist: true })
+                }
+                else if (!(/[a-zA-Z]/.test(inputValue))) {
+                    handleErrorMessage({ empty: true, exist: false })
+                } else {
                     const newTodoList = [...todoList, { text: inputValue, checked: false }];
                     localStorage.setItem('todo-list', JSON.stringify(newTodoList));
                     setList([...todoList, { text: inputValue, checked: false }])
-                    setShowMessage({empty:false,exist:false})
+                    setShowMessage({ empty: false, exist: false })
                     setInputValue('');
                 }
             }
