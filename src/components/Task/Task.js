@@ -59,6 +59,7 @@ export default function Task() {
             checked: checked
         };
         setList(newList);
+        localStorage.setItem('todo-list', JSON.stringify(newList));
     };
 
     return (
